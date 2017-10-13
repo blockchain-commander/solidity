@@ -32,8 +32,8 @@ using namespace dev;
 using namespace langutil;
 using namespace dev::solidity;
 
-SMTChecker::SMTChecker(ErrorReporter& _errorReporter, ReadCallback::Callback const& _readFileCallback):
-	m_interface(make_shared<smt::SMTPortfolio>(_readFileCallback)),
+SMTChecker::SMTChecker(ErrorReporter& _errorReporter, map<h256, string> const& _smtlib2Responses):
+	m_interface(make_shared<smt::SMTPortfolio>(_smtlib2Responses)),
 	m_errorReporter(_errorReporter)
 {
 }
@@ -44,6 +44,11 @@ void SMTChecker::analyze(SourceUnit const& _source, shared_ptr<Scanner> const& _
 	m_scanner = _scanner;
 	if (_source.annotation().experimentalFeatures.count(ExperimentalFeature::SMTChecker))
 		_source.accept(*this);
+}
+
+vector<string> SMTChecker::unhandledQueries()
+{
+	return m_interface->unhandledQueries();
 }
 
 bool SMTChecker::visit(ContractDefinition const& _contract)
