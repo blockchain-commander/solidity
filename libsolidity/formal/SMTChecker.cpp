@@ -46,11 +46,6 @@ void SMTChecker::analyze(SourceUnit const& _source, shared_ptr<Scanner> const& _
 		_source.accept(*this);
 }
 
-vector<string> SMTChecker::unhandledQueries()
-{
-	return m_interface->unhandledQueries();
-}
-
 bool SMTChecker::visit(ContractDefinition const& _contract)
 {
 	for (auto _var : _contract.stateVariables())

@@ -215,6 +215,6 @@ string SMTLib2Interface::querySolver(string const& _input)
 	else
 	{
 		m_unhandledQueries.push_back(_input);
-		return "";
+		return string{};
 	}
 }
