@@ -78,8 +78,6 @@ private:
 	std::set<std::string> m_variables;
 
 	std::vector<std::string> m_unhandledQueries;
-	std::set<std::string> m_constants;
-	std::set<std::string> m_functions;
 };
 
 }
