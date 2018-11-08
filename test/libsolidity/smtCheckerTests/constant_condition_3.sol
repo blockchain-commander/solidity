@@ -5,3 +5,5 @@ contract C {
         if (true) { revert(); }
     }
 }
+// ----
+// Warning: (136-144): Assertion checker does not yet implement this type of function call.

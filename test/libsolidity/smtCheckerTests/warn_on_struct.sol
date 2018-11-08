@@ -8,5 +8,5 @@ contract C {
 }
 // ----
 // Warning: (32-65): Experimental features are turned on. Do not use experimental features on live deployments.
-// Warning: (150-151): Assertion checker does not yet support the type of this variable.
+// Warning: (150-158): Assertion checker does not yet support the type of this variable.
 // Warning: (177-194): Assertion checker does not yet implement this expression.
