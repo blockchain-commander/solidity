@@ -20,7 +20,7 @@
 #include <liblangutil/Exceptions.h>
 #include <libsolidity/interface/ReadFile.h>
 
-#include <libdevcore/SHA3.h>
+#include <libdevcore/Keccak256.h>
 
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/algorithm/string/join.hpp>
